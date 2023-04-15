@@ -29,7 +29,7 @@ print("My name is " + name + " and " + str(age) + " years old" + " and I am very
 1)String Type 
 2)Number Type (int, float, complex)
 3)Boolean Type (bool)
-4)Sequence Type (list, sets, tuple, range)
+4)Collection Data type (list, sets, tuple, range)
 5)Mapping Type (Dictionary i.e dict)
 '''
 
@@ -117,7 +117,6 @@ print(a <= b)
 print(a >= b)
 
 
-
 print("//////////Logical Operators////////")
 # Logical Operators and, or , not
 print((a == b) and (a >= b))
@@ -125,3 +124,132 @@ print((a != b) and (a >= b))
 print((a != b) or (a >= b))
 print((a == b))
 print(not (a == b))
+
+
+
+print("////////List//////////")
+# Python Collections list, tuple, set and dictionary
+# List
+# List is a collection of items in rectangular bracket. list items are ordered, changeable
+lst1 = list()
+print(type( lst1))
+lst = [2, "string", True, 9.8, 48, [1, 4]]
+print(type(lst))
+first_item = lst[0]
+sec_item = lst[1]
+print(first_item)
+print(sec_item)
+# last_item = lst[-1]
+last_item = lst[5]
+print(last_item)
+print(lst[5][1])
+
+
+# len()
+print(len(lst))
+
+print(lst)
+
+# Append
+lst.append("apple")
+lst2 = ["Blard", "Python"]
+
+print(lst)
+lst.extend(lst2)
+print(lst)
+
+# slicing
+# lst[start:end:step]
+sliced_lst = lst[4:7]
+print(sliced_lst)
+print(lst[::2])
+
+lst.insert(2, "inserted")
+print(lst)
+
+# pop
+# lst.pop()
+# print(lst)
+# lst.pop(2)
+# print(lst)
+
+# clear
+# lst.clear()
+# print(lst)
+
+# del
+# del lst
+# print(lst)
+
+# for item in lst:
+    # print(f'Item {item}')
+    
+
+my_car = ['Volvo', 'Toyota', 'Honda', 'Ford', 'Mercedes', 'BMW']
+
+fav_cars = my_car[0:5:4]
+# print(fav_cars)
+# print(my_car[1::2])
+
+# for car in my_car:
+    # print(f'My favorite car is {car}')
+
+
+
+# Tuples
+# Tuple is immutable
+# Items are ordered
+# NB: When tuple is created, you can not add, remove, replace or reorder items
+
+# creating tuples
+tpl = tuple([2, "string"])
+print(type(tpl), tpl)
+my_tpl = ("string", 2, 9.6)
+print(type(my_tpl), my_tpl)
+print(my_tpl[0])
+print(my_tpl[1])
+# print(my_tpl[2])
+
+# max, min, len, sum
+print(len(tpl))
+print(len(my_tpl))
+# print(max(my_tpl))
+
+# slicing tuple
+print(my_tpl[0::2])
+
+print("string" not in tpl or "string" in my_tpl)
+
+new_tpl = list(tpl)
+print(type(new_tpl), new_tpl)
+new_tpl.insert(0, "new-item")
+print(new_tpl)
+modified_tpl = tuple(new_tpl)
+print(type(modified_tpl), modified_tpl)
+
+
+# Sets
+# Set is a collection of unordered items enclosed in a curly brackets { }
+
+math_set = set(['ruler', 'pencil', 'compass', 'divider', 'eraser', 'sharpener', 'pencil'])
+print(math_set)
+print(type(math_set))
+print(len(math_set))
+
+my_set = { "item1", "item2", "item3", "item4"}
+print(type(my_set), my_set)
+# for item in math_set:
+#     print(item)
+
+
+
+
+
+
+
+
+
+
+
+
+
