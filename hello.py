@@ -144,19 +144,40 @@ last_item = lst[5]
 print(last_item)
 print(lst[5][1])
 
+# unpacking list
+fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
+first_fruit, second_fruit, third_fruit, *rest = lst
+print(first_fruit)     # banana
+print(second_fruit)    # orange
+print(third_fruit)     # mango
+print(rest)            # ['lemon','lime','apple']
+
 
 # len()
-print(len(lst))
+print(len(lst))             
 
 print(lst)
 
-# Append
+# Modifying lists- append(), insert(), extend() and join()
+# Append- adds item at the end of list
 lst.append("apple")
 lst2 = ["Blard", "Python"]
 
+# extend() joining two lists
 print(lst)
 lst.extend(lst2)
 print(lst)
+
+# insert() adds a single item at a specified index
+'''
+syntax
+lst.insert(index, item)
+'''
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.insert(2, 'apple') # insert apple between orange and mango
+print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
+fruits.insert(3, 'lime')   # ['banana', 'orange', 'apple', 'lime', 'mango', 'lemon']
+print(fruits)
 
 # slicing
 # lst[start:end:step]
@@ -164,10 +185,20 @@ sliced_lst = lst[4:7]
 print(sliced_lst)
 print(lst[::2])
 
-lst.insert(2, "inserted")
-print(lst)
+# joining list
+# we can join two or more list using the + oparator
+# syntax
+# list3 = list1 + list2 + list3 + listn
+positive_numbers = [1, 2, 3, 4, 5]
+zero = [0]
+negative_numbers = [-5,-4,-3,-2,-1]
+integers = negative_numbers + zero + positive_numbers
+# print(integers) # [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
 
-# pop
+
+
+# Removing items from a list- pop, remove, clear, del
+# pop()
 # lst.pop()
 # print(lst)
 # lst.pop(2)
@@ -184,7 +215,7 @@ print(lst)
 # for item in lst:
     # print(f'Item {item}')
     
-
+# looping over list
 my_car = ['Volvo', 'Toyota', 'Honda', 'Ford', 'Mercedes', 'BMW']
 
 fav_cars = my_car[0:5:4]
@@ -194,61 +225,137 @@ fav_cars = my_car[0:5:4]
 # for car in my_car:
     # print(f'My favorite car is {car}')
 
+'''NB: There are more list methods such as sort(), reverse(), count(), index(), copy() etc...'''
 
 
+# print('//////Tuples///////)
 # Tuples
 # Tuple is immutable
-# Items are ordered
+# Items are ordered, indexed
 # NB: When tuple is created, you can not add, remove, replace or reorder items
 
 # creating tuples
-tpl = tuple([2, "string"])
-print(type(tpl), tpl)
+# tpl = tuple([2, "string"])
+# print(type(tpl), tpl)
 my_tpl = ("string", 2, 9.6)
-print(type(my_tpl), my_tpl)
-print(my_tpl[0])
-print(my_tpl[1])
+# print(type(my_tpl), my_tpl)
+
+# Accessing tuple using index property
+# print(my_tpl[0])
+# print(my_tpl[1])
 # print(my_tpl[2])
 
 # max, min, len, sum
-print(len(tpl))
-print(len(my_tpl))
+# print(len(tpl))
+# print(len(my_tpl))
 # print(max(my_tpl))
 
 # slicing tuple
-print(my_tpl[0::2])
+# print(my_tpl[0::2])
 
-print("string" not in tpl or "string" in my_tpl)
+# checking an item in tuple
+# print("string" not in tpl or "string" in my_tpl)
 
+
+'''
+# Modifying tuple
+# To be able to modify a tuple, you need to convert it to lists
 new_tpl = list(tpl)
 print(type(new_tpl), new_tpl)
 new_tpl.insert(0, "new-item")
 print(new_tpl)
 modified_tpl = tuple(new_tpl)
 print(type(modified_tpl), modified_tpl)
+'''
+
+# joining tuples
+# we can join two or more tuples using the + oparator
+tpl1 = ('item1', 'item2', 'item3')
+tpl2 = ('item4', 'item5','item6')
+tpl3 = tpl1 + tpl2
+print(tpl3)
+
+#  removing items in tuple is not supported
+# tpl3.clear()
+# print(tpl3)
+
+# deleting tuple
+# del tpl1, tpl2, tpl3
 
 
+
+print('/////Sets/////')
 # Sets
-# Set is a collection of unordered items enclosed in a curly brackets { }
+# Set is a collection of unordered, unindexed items enclosed in a curly brackets { }
+# e.g math set = {ruler, pencils, eraser, protactor}
+
+# Creating a set
+# my_st = set()
+# my_st2 = {}
 
 math_set = set(['ruler', 'pencil', 'compass', 'divider', 'eraser', 'sharpener', 'pencil'])
 print(math_set)
 print(type(math_set))
+
+# len()
 print(len(math_set))
 
+
 my_set = { "item1", "item2", "item3", "item4"}
-print(type(my_set), my_set)
-# for item in math_set:
-#     print(item)
+# print(type(my_set), my_set)
+for item in math_set:
+    print(item)
+
+# Accessing set
+# we use loops to access the set
+
+# To check if an item is in a set
+my_set = { "item1", "item2", "item3", "item4"}
+# print('item4' in my_set)
+fruits = {'apple', 'orange', 'banana', 'mango'}
+print("Does my_set contain mango?", 'mango' in fruits )
+
+# Modifying a set
+# add() to add one item
+fruits.add('grape')
+
+# update() to add multiple items, it takes a list of items to be added
+# update() is more like the extend method in list.
+fruits = {'apple', 'orange', 'banana', 'mango'}
+vegetables = ('tomato', 'potato', 'cabbage','onion', 'carrot')
+fruits.update(vegetables)
+
+# Removing items from set pop, remove, discard, clear and del
+# pop() removes random items from the set and return the removed items
+print(fruits.pop())
+
+# NB: remove() wil throw error if the item is not found in the set but discard won't throw error 
+
+# union()
+# union() is used to join two sets. it works just like update()
+# union() return a new set
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+vegetables = {'tomato', 'potato', 'cabbage','onion', 'carrot'}
+print(fruits.union(vegetables))
+
+# intersection of sets
+# To check for intersection of sets, we use the intersection()
+whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+even_numbers = {0, 2, 4, 6, 8, 10}
+whole_numbers.intersection(even_numbers)
+
+# other sets method includes- difference(), issubset() and issuperset()
 
 
+
+# print(type('//////Dictionary////////')
 # dictionary
 # dictionary is a collection of unordered items in key-value pairs.
 # dictionary mutable (modifiable)
 my_dict = dict()
-print(type(my_dict))
+# print(type(my_dict))
 dct = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
-print(dct)
+# print(dct)
 
 person = {
     'first_name': 'blard',
@@ -261,11 +368,11 @@ person = {
 }
 
 # len
-print(person)
-print(len(person))
+# print(person)
+# print(len(person))
 
 # Accessing dict
-print(person['address'])
+'''print(person['address'])
 print(person['country'])
 print(person['age'])
 print(person['skill'])
@@ -308,16 +415,18 @@ person.clear()
 # delete 
 del person
 # print(person)
+'''
 
-# Conditionals if, if-else, elif, break, continue
 
+'''print('//////Conditionals///////')
+# Conditionals if, if-else, elif
 # if
 # syntax
 # if condition:
 #     run this code
 a = 3
-# if a > 0:
-#     print('a is a positive number')
+if a > 0:
+    print('a is a positive number')
     
     
 # if-else
@@ -349,7 +458,45 @@ elif a < 0:
     print('A is a negative number')
 else:
     print('A is zero')
+    
+'''
+# Task 1
 
+
+print('///////Loops///////')
+# Loops- for loop, while loop, range function, break, pass and continue
+# looping overlist, list comprehension
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Functions
+# declaring and calling a function
+# function without parameters
+# function with parameters
+# Parameters vs arguments
+# function with default parameters
+# args and kwargs
 
 
 
