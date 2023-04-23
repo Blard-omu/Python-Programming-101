@@ -242,13 +242,113 @@ print(type(my_set), my_set)
 #     print(item)
 
 
+# dictionary
+# dictionary is a collection of unordered items in key-value pairs.
+# dictionary mutable (modifiable)
+my_dict = dict()
+print(type(my_dict))
+dct = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+print(dct)
+
+person = {
+    'first_name': 'blard',
+    'last_name': 'Omu',
+    'age': 36,
+    'country': 'United States',
+    'skill': ['Javascript', 'React', 'Python', 'Django', 'Node'],
+    'address': {'street': 'stella'},
+    'city': 'lagos'
+}
+
+# len
+print(person)
+print(len(person))
+
+# Accessing dict
+print(person['address'])
+print(person['country'])
+print(person['age'])
+print(person['skill'])
+
+# get()
+print(person.get('country'))
+print(person.get('first_name'))
+print(person.get('city'))
+
+# keys() and values()
+print(person.keys())
+# print(person.values())
+
+# modifying dictionary
+person['age'] = 30
+# print(person['age'])
+# update()
+# person.update({'name': 'John'})
+# print(person['name'])
+# print(person)
+
+# Removing item
+# print(person.pop('name'))
+# print(person)
+
+# items()
+# print(person.items())
+
+# for key, value in person.items():
+#     print(f'The key is {key} and the value is {value}')
 
 
+# print('name' in person)
+# print('city' in person)
 
+# clear()
+person.clear()
+# print(person)
 
+# delete 
+del person
+# print(person)
 
+# Conditionals if, if-else, elif, break, continue
 
+# if
+# syntax
+# if condition:
+#     run this code
+a = 3
+# if a > 0:
+#     print('a is a positive number')
+    
+    
+# if-else
+# syntax
+# if condition:
+#     run this code
+# else:
+#     do something different
 
+if a < 0:
+    print('A is a negative number')
+else:
+    print('A is a positive number')
+    
+
+# if elif else
+# if condition1:
+#     do this
+# elif condition2:
+#     do this:
+# elif condition3:
+#     do this:
+# else:
+#     do this
+
+if a > 0:
+    print('A is a positive number')
+elif a < 0:
+    print('A is a negative number')
+else:
+    print('A is zero')
 
 
 
